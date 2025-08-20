@@ -1,0 +1,140 @@
+// This is the text file that contains all of the dialogue of the game.
+// In order to write dialogues you must follow a few rules.
+//
+// A conversation is any scene from the moment where the dialogue box shows up to the moment it closes.
+// To start a new conversation, write a line that begins with # and enter the name of the conversation.
+// example: 
+// # Conversation1
+//
+// Then, for each sentence (or group of sentences) that you want a character to say, put brackets at the beginning
+// of the line. Inside them, insert the name of the character in uppercase and the name of the sprite to use in lowercase.
+// Outside of the brackets, write the sentence you want them to say.
+// example:
+// [BOB sad] Oh such sadness in my heart
+//
+// If you only want to speak the protagonist's thoughts and not show a sprite, you can leave the brackets empty.
+// Either way, brackets must be the first thing that appears for every dialogue line you write.
+// example:
+// [] This is a bucket.
+//
+// Notes:
+// - Conversations, characters and sprites must me written as a single word.
+// - Inside the brackets, there can be only 2 words and 1 space between them. Don't leave a space
+// between the words and the brackets (ie. [ BOB sad ] will cause an error as there are 3 spaces)
+// - You can skip lines everywhere you want, though I'd recommend to do that only when changing conversations 
+// for readability (but that decision is up to you)
+//
+// That's basically it! As long as you follow the rules above, no error should come up.
+// I tried to make it as intuitive as possible. I've also written a few test conversations
+// so you can actually see what that looks like. Have fun writing!
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+///////////////////////////////////////////////////     CONVERSATIONS     ////////////////////////////////////////////////////////////////////
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+# Scene1TheShrine
+
+[MIHARA neutral] I finally got here
+[MIHARA neutral] ...
+[MIHARA neutral] Speaking of this shrine.. 
+[MIHARA neutral] I eavesdropped on someone talking about this weird rabbit shrine that could grant what they wished for
+[MIHARA neutral] Since the band audition is tomorrow, I guess it cannot hurt to try
+[] The wind gently whistles, your hair was blown in different directions.
+[MIHARA wishful] For the upcoming audition
+[MIHARA wishful] I hope everything goes well
+[MIHARA wishful] I hope that I can join the band, attract love and luck
+
+// The boy pauses a little
+
+[MIHARA wishful] Please accept my wish, and make it come true
+
+// The rabbit shrine suddenly opens its eyes
+
+[] Crimson iris staring back at you.
+[RABBIT rabbit] …Fear no more
+[MIHARA neutral] ?
+[RABBIT rabbit] Consign to thee, and come to dust
+[RABBIT rabbit] Take this with you, and luck shall be in your way
+
+// Window showing the sacred charm that player just received pops up
+
+[] You received a sacred charm.
+[MIHARA neutral] …
+[MIHARA neutral] Will this really help?
+[MIHARA neutral] I… I will keep it with me everywhere I go
+[] The mysterious voice faded away, the surroundings suddenly turned back to silence.
+[MIHARA wishful] May my drumming capture the souls and resonate across the world
+[] You whispered to yourself.
+
+# Scene2Bedroom
+
+// Mihara is dressing up in front of a mirror in his room for today’s audition
+
+[MIHARA neutral] ...Alright
+[MIHARA neutral] Today is the day
+[MIHARA neutral] Everything should be okay... I have this sacred charm with me
+
+// The drumstick falls off
+
+# Scene2Mirror
+// After walking to pick up the drumstick, Mihara suddenly heard something
+
+[] You heard a small whisper and were in freezing silence.
+
+// Nothing happened, Mihara went back to dressing in front of a mirror
+// Suddenly, Mihara sees a dark figure in the mirror that isn’t himself
+
+[MIHARA neutral] Wh... what’s happening?
+[MIHARA scared] Who are you?
+[ANONYMOUS echoed] You, you, you, you, you, you, you, you, you, you, you, you, you, you, you, you, you, you, you
+[ANONYMOUS echoed] It’s always been you
+
+// The computer in the corner clatters a fizzy sound
+// Disturbance sound starts to rumble
+// Everything turns dark
+
+# Scene3Library
+
+[MIHARA scared] ...
+[MIHARA scared] It’s so quiet... where’s everyone?
+[ANONYMOUS echoed] You’re the only one here
+[ANONYMOUS echoed] Find your way out or get stuck here forever
+
+// Gameplay begins
+// Walking down the hallway where the light dims before noticing the audition’s poster
+// Almost at the end of gameplay
+
+# Scene3End
+
+[MIHARA neutral] I need to make it to the audition! 
+[MIHARA wishful] May my drumming capture the souls and resonate across the world!
+
+// A cut scene of Mihara solo drumming shows up
+
+# Scene4Bedroom
+
+// Mihara sits on his bed, looking around confusingly 
+
+[] You sit on your bed, looking around in confusion.
+[MIHARA neutral] Was that... just a dream?
+[MIHARA neutral] Ugh, same old trauma from audition era always got me
+
+// The alarm clock rings
+
+[MIHARA neutral] Oh no! I'm going to be late for the band practice
+[MIHARA neutral] Need to get ready now
+
+// Mihara gets up, player can walk around and interact with items in the room
+// The order of interaction below is exchangeable depending on what player clicks on first
+// Player interacts with Mihara's music band picture
+
+// [] A photo of you and your bandmates.
+
+// Player interacts with the sacred charm
+
+// [] The sacred charm you received from (???).
+
+// Player interacts with the drum
+
+[] May your drumming capture the souls and resonate across the world.
