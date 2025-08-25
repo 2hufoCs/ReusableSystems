@@ -16,7 +16,20 @@
 // Either way, brackets must be the first thing that appears for every dialogue line you write.
 // example:
 // [] This is a bucket.
-//
+
+// Inline Text Commands:
+// {~}wavy text{/~}
+// {!}impact text{/!}
+// {>> x}changes speed at which characters are displayed{>>}
+// {# 000000}this text is black{#} (uses HEX color values)
+// {+MENU_BEGIN} inserts the dialog from the MENU_BEGIN value (in English, "CLIMB")
+// {n} creates a newline, without a page break
+// {0.5} creates a 0.5 second pause
+// {big}this text is large{/big}
+
+//  Gameplay text commands:
+// {trigger event} -> triggers event
+
 // Notes:
 // - Conversations, characters and sprites must me written as a single word.
 // - Inside the brackets, there can be only 2 words and 1 space between them. Don't leave a space
@@ -35,14 +48,14 @@
 
 # Scene1TheShrine
 
-[MIHARA neutral] I finally got here
+[MIHARA neutral] I don't want but i have to write a long line to test so I {0.2}finally{0.3} got here
 [MIHARA neutral] ...
-[MIHARA neutral] Speaking of this shrine.. 
+[MIHARA neutral] Speaking of this shrine...
+
 [MIHARA neutral] I eavesdropped on someone talking about this weird rabbit shrine that could grant what they wished for
 [MIHARA neutral] Since the band audition is tomorrow, I guess it cannot hurt to try
 [] The wind gently whistles, your hair was blown in different directions.
-[MIHARA wishful] For the upcoming audition
-[MIHARA wishful] I hope everything goes well
+[MIHARA wishful] For the upcoming audition{.2}.{.2}.{.2}.{.5} I hope everything goes well
 [MIHARA wishful] I hope that I can join the band, attract love and luck
 
 // The boy pauses a little
@@ -65,7 +78,7 @@
 [MIHARA neutral] I… I will keep it with me everywhere I go
 [] The mysterious voice faded away, the surroundings suddenly turned back to silence.
 [MIHARA wishful] May my drumming capture the souls and resonate across the world
-[] You whispered to yourself.
+[] You whispered to yourself.{choice testChoice}
 
 # Scene2Bedroom
 

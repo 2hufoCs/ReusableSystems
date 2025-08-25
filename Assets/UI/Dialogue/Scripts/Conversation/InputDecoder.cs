@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using UnityEngine.UI;
 using System.ComponentModel;
 using TMPro;
+using UnityEngine.Lumin;
 
 public class InputDecoder : MonoBehaviour
 {
@@ -16,13 +17,20 @@ public class InputDecoder : MonoBehaviour
 	/// </summary>
 
 	public List<Character> characterList = new();
+	[SerializeField] float textSpeed;
+	[SerializeField] float skipSpeed;
+	[SerializeField] ChoiceLogic choiceLogic;
 	public TextMeshProUGUI dialogueText;
 	public Image characterImage;
+
+	public bool writingLine = false;
+	bool pausingLine = false;
+	float pausingTime = .1f;
 
 
 	public void ParseInputLine(string stringToParse)
 	{
-		// We check if there's text between brackets in the string. 
+		// Check if the line has brackets at all
 		int openBracketIndex = stringToParse.IndexOf("[");
 		int closeBracketIndex = stringToParse.IndexOf("]");
 		if (openBracketIndex == -1 || closeBracketIndex == -1)
@@ -69,6 +77,8 @@ public class InputDecoder : MonoBehaviour
 		SplitToSay(stringToParse, sprite);
 
 	}
+
+
 
 	private bool IsCharacterExisting(string characterName)
 	{
@@ -124,29 +134,128 @@ public class InputDecoder : MonoBehaviour
 
 	public void SplitToSay(string stringToParse, Sprite sprite)
 	{
+
+
 		int startOfQuote = stringToParse[0] == ' ' ? 1 : 0;
 		int endOfQuote = stringToParse.Length;
 		string stringToOutput = stringToParse.Substring(startOfQuote, endOfQuote - startOfQuote);
 
+
 		Say(stringToOutput, sprite);
 	}
 
-	public void Say(string what, Sprite sprite)
+	public void Say(string text, Sprite sprite)
 	{
 		characterImage = gameObject.transform.Find("CharacterSprite").GetComponent<Image>();
 		characterImage.color = new Color(characterImage.color.r, characterImage.color.g, characterImage.color.b, 1);
 
-		dialogueText.text = what;
+		StartCoroutine(PrintLine(text));
 		characterImage.sprite = sprite;
 	}
 
-	public void Say(string what)
+	public void Say(string text)
 	{
 		characterImage = gameObject.transform.Find("CharacterSprite").GetComponent<Image>();
 		characterImage.color = new Color(characterImage.color.r, characterImage.color.g, characterImage.color.b, 0);
 
-		dialogueText.text = what;
+		StartCoroutine(PrintLine(text));
 		characterImage.sprite = null;
+	}
+
+	IEnumerator PrintLine(string text)
+	{
+		writingLine = true;
+		float cps = 1 / textSpeed; // characters per second
+
+		string currentText = "";
+		for (int i = 0; i < text.Length; i++)
+		{
+			// If player clicks when line is writing, just show the rest
+			if (!writingLine)
+			{
+				cps = 1 / skipSpeed; // just go super fast
+			}
+
+			if (text[i] == '{')
+			{
+				i = ParseCurlyBrackets(text, i);
+				continue;
+			}
+
+			if (pausingLine && writingLine)
+			{
+				yield return new WaitForSeconds(pausingTime);
+				pausingLine = false;
+			}
+
+			currentText += text[i];
+			if (writingLine)
+			{
+				dialogueText.text = currentText;
+			}
+			yield return new WaitForSeconds(cps);
+		}
+		dialogueText.text = currentText;
+
+		writingLine = false;
+	}
+
+	int ParseCurlyBrackets(string text, int openingIndex)
+	{
+		int closingIndex = text.IndexOf("}", openingIndex);
+
+		if (closingIndex < 0)
+		{
+			Debug.LogError("Opening curly bracket was not closed; please fix typo in dialogue text file!!");
+		}
+
+		string command = text[(openingIndex + 1)..closingIndex];
+
+		// If command is a value, pause dialogue for that value
+		if (float.TryParse(command, out float value))
+		{
+			pausingLine = true;
+			pausingTime = value;
+		}
+
+
+		string[] splitCommand = command.Split(' ');
+
+		// Two-word commands
+		if (splitCommand.Length == 2)
+		{
+			// If command is a choice, try to load choice
+			if (splitCommand[0] == "choice")
+			{
+				choiceLogic.LoadChoice(splitCommand[1]);
+			}
+		}
+
+
+
+			return closingIndex;
+	}
+
+	string RemoveCurlyBrackets(string text)
+	{
+		string formattedText = "";
+		for (int i = 0; i < text.Length; i++)
+		{
+			if (text[i] == '{')
+			{
+				int closingIndex = text.IndexOf("}", i);
+
+				if (closingIndex < 0)
+				{
+					Debug.LogError("Opening curly bracket was not closed; please fix typo in dialogue text file!!");
+				}
+
+				i = closingIndex;
+				continue;
+			}
+			formattedText += text[i];
+		}
+		return formattedText;
 	}
 
 	#endregion

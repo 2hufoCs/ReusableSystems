@@ -7,10 +7,11 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(InputDecoder))]
 public class ConversationManager : MonoBehaviour
 {
 	// REPLACE THIS PATH WITH WHATEVER PATH YOUR TXT FILE IS LOCATED
-	public string textPath = "/Assets/Dialogue/TextFiles/DialogueContent.txt";
+	public string textPath;
 
 	private InputDecoder inputDecoder;
 	[SerializeField] private TextAsset dialogue;
@@ -18,11 +19,11 @@ public class ConversationManager : MonoBehaviour
 
 	private List<string> dialogueLines = new();
 	private List<string> conversationList = new();
-	private string convName;
 	private List<int> convIndexList = new();
 	private List<string> convToOutput = new();
 
 	private bool dialogueTriggered = false;
+	[HideInInspector] public bool selectingChoice;
 
 
 	// Start is called before the first frame update
@@ -62,6 +63,8 @@ public class ConversationManager : MonoBehaviour
 				conversationList.Add(dialogueLines[i]);
 			}
 		}
+
+		LoadConversation("Scene1TheShrine");
 	}
 
 	public void LoadConversation(string targetConversation)
@@ -76,7 +79,6 @@ public class ConversationManager : MonoBehaviour
 			{
 				continue;
 			}
-			convName = GetConversationName(conversation);
 
 			// Getting the bounds of the conversation
 			int convStartIndex = convIndexList[i] + 1;
@@ -87,8 +89,7 @@ public class ConversationManager : MonoBehaviour
 			convToOutput = dialogueLines.GetRange(convStartIndex, convEndIndex - convStartIndex + 1);
 
 			// Show the first line of the dialogue
-			gameObject.SetActive(true);
-			dialogueTriggered = true;
+			ShowDialogueBox();
 
 			ShowNextLine();
 			return;
@@ -125,7 +126,7 @@ public class ConversationManager : MonoBehaviour
 
 	void Update()
 	{
-		if (!dialogueTriggered)
+		if (!dialogueTriggered || selectingChoice)
 		{
 			return;
 		}
@@ -133,7 +134,14 @@ public class ConversationManager : MonoBehaviour
 		// Show next line of dialogue once the player hits the confirm button
 		if (Input.GetButtonDown("Submit"))
 		{
-			ShowNextLine();
+			if (inputDecoder.writingLine)
+			{
+				inputDecoder.writingLine = false;
+			}
+			else
+			{
+				ShowNextLine();
+			}
 		}
 	}
 
@@ -142,12 +150,7 @@ public class ConversationManager : MonoBehaviour
 		// If we've reached the end of the conversation, remove text, sprite and dialogue box from view
 		if (convToOutput.Count == 0)
 		{
-			inputDecoder.dialogueText.text = "";
-			inputDecoder.characterImage = null;
-			gameObject.SetActive(false);
-
-			dialogueTriggered = false;
-
+			HideDialogueBox();
 			return;
 		}
 
@@ -156,34 +159,25 @@ public class ConversationManager : MonoBehaviour
 		inputDecoder.ParseInputLine(textLine);
 	}
 
-	// Fadeins and fadeouts, not useful rn but maybe later
+	void ShowDialogueBox()
+	{
+		inputDecoder.dialogueText.text = "";
+		inputDecoder.characterImage = null;
+		gameObject.SetActive(true);
+		dialogueTriggered = true;
+	}
 
-	// private IEnumerator Fadeout(float timer)
-	// {
-	// 	float secondsPassed = 0;
-	// 	Color fadeColor = fadeScreen.color;
-	// 	while (secondsPassed < timer)
-	// 	{
-	// 		fadeColor = fadeScreen.color;
-	// 		fadeScreen.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, secondsPassed / timer);
+	void HideDialogueBox()
+	{
+		inputDecoder.dialogueText.text = "";
+		inputDecoder.characterImage = null;
+		gameObject.SetActive(false);
+		dialogueTriggered = false;
+	}
+}
 
-	// 		secondsPassed += Time.deltaTime;
-	// 		yield return null;
-	// 	}
-	// 	fadeScreen.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 1);
-
-	// }
-
-	// private IEnumerator FadeIn(float timer)
-	// {
-	// 	float secondsPassed = 0;
-	// 	while (secondsPassed < timer)
-	// 	{
-	// 		Color fadeColor = fadeScreen.color;
-	// 		fadeScreen.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 1 - (secondsPassed / timer));
-
-	// 		secondsPassed += Time.deltaTime;
-	// 		yield return null;
-	// 	}
-	// }
+class Conversation
+{
+	string text;
+	Choice choice; // If there's a choice at the end of the conversation. can be assigned to null if none
 }

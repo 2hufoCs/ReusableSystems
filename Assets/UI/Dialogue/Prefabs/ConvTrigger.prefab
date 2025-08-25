@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationName: Scene1TheShrine
+  convManager: {fileID: -289695194707702672, guid: bb632f620b857744f839915e85bcff53, type: 3}
   triggered: 0
 --- !u!60 &-5125002965061065179
 PolygonCollider2D:
