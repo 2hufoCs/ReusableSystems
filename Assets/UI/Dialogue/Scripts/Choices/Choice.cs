@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,5 +34,17 @@ public class Choice : ScriptableObject
         this.name = name;
         this.options = options;
         this.responses = responses;
+    }
+
+    public void SetCondition(bool[] requirements)
+    {
+            try 
+            {
+                conditions = requirements;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Couldn't set conditions by code \n" + ex);
+            }
     }
 }
