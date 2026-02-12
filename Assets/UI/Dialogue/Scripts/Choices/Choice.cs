@@ -8,8 +8,9 @@ public class Choice : ScriptableObject
 {
     public new string name;
     public string[] options = new string[3];
-    [HideInInspector] public bool[] conditions = new bool[3];
+    [HideInInspector] public bool[] conditions = new bool[3]; // currently conditions can't be assigned in editor, only by code
     public string[] responses = new string[3];
+
 
     public Choice(string name, string[] options, bool[] conditions, string[] responses)
     {

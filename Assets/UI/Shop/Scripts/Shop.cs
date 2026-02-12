@@ -8,7 +8,6 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private Item[] itemList = new Item[5];
 
-    [SerializeField]
 
     public void Start()
     {

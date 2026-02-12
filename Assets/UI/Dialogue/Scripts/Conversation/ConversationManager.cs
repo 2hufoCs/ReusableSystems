@@ -64,7 +64,7 @@ public class ConversationManager : MonoBehaviour
 			}
 		}
 
-		LoadConversation("Scene1TheShrine");
+		LoadConversation("MonsterWorldScene");
 	}
 
 	public void LoadConversation(string targetConversation)

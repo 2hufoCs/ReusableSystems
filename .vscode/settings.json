@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "ReusableSystems.sln"
+    "dotnet.defaultSolution": "ReusableSystems.slnx"
 }

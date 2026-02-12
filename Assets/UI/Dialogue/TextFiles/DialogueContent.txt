@@ -46,10 +46,26 @@
 ///////////////////////////////////////////////////     CONVERSATIONS     ////////////////////////////////////////////////////////////////////
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+# MonsterWorldScene
+
+[] The slime girl chuckles awkwardly. Apparently, she didn’t really like the dragon make everyone shut up like that.
+
+[SLAMORA Slamora] Okay, so first of all, I just want to reassure you guys, you aren’t in any kind of trouble!
+[SLAMORA Slamora] We aren’t here to punish you or something like that. 
+[SLAMORA Slamora] Even if you either attacked others attending that conference, or just caused general chaos…
+
+//[MAGE] I merely sent someone flying because they were stepping on my foot.
+
+[HENRY Henry] I-I swear I didn’t impale people with my spikes on purpose!! 
+[HENRY Henry] I’m really, really sorry for what happened, and I’ll make sure it doesn’t happen again!!! 
+
+[MIMI Mimi] As for me...{choice choice1}
+
+
 # Scene1TheShrine
 
 [MIHARA neutral] I don't want but i have to write a long line to test so I {0.2}finally{0.3} got here
-[MIHARA neutral] ...
+[MIHARA neutral] .{.2}.{.2}.
 [MIHARA neutral] Speaking of this shrine...
 
 [MIHARA neutral] I eavesdropped on someone talking about this weird rabbit shrine that could grant what they wished for

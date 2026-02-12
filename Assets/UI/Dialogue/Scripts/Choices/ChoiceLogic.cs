@@ -21,6 +21,8 @@ public class ChoiceLogic : MonoBehaviour
     public bool hasCoat = true;
     private VerticalLayoutGroup choiceLayout;
 
+    List<Action> choiceActions = new();
+
     void Start()
     {
         choiceLayout = GetComponent<VerticalLayoutGroup>();
@@ -36,6 +38,7 @@ public class ChoiceLogic : MonoBehaviour
 
         // PUT ALL YOUR CHOICE CONDITIONS HERE BY CALLING SETCONDITION
         SetCondition("testChoice", new[] { true, true, hasCoat });
+        SetCondition("choice1", new[] {true, true, true});
     }
 
     public void LoadChoice(string name)
@@ -142,6 +145,8 @@ public class ChoiceLogic : MonoBehaviour
     // {
     //     convManager.LoadConversation("Scene3Library");
     // }
+
+
 
     #endregion
 }

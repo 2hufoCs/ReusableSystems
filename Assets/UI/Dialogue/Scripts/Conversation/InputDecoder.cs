@@ -173,7 +173,11 @@ public class InputDecoder : MonoBehaviour
 			// If player clicks when line is writing, just show the rest
 			if (!writingLine)
 			{
-				cps = 1 / skipSpeed; // just go super fast
+				// cps = 1 / skipSpeed; // just go super fast
+				currentText += text.Substring(i, text.Length - i);
+
+				dialogueText.text = currentText;
+				break;
 			}
 
 			if (text[i] == '{')
