@@ -14,8 +14,8 @@ public class Shop : MonoBehaviour
         // Spawning random objects in shop, DEBUG ONLY
         for (int i = 0; i < itemList.Length; i++)
         {
-            int rnd = Random.Range(0, Inventory.Instance.items.Length);
-            itemList[i] = Inventory.Instance.items[rnd];
+            int rnd = Random.Range(0, Inventory.Instance.itemPrefabs.Length);
+            itemList[i] = Inventory.Instance.itemPrefabs[rnd];
         }
     }
 

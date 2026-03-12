@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChoiceBtn : MonoBehaviour
 {
+    [HideInInspector] public Choice parentChoice;
     public string response;
     [HideInInspector] public ConversationManager convManager;
 
@@ -11,6 +13,10 @@ public class ChoiceBtn : MonoBehaviour
     {
         convManager.LoadConversation(response);
         convManager.selectingChoice = false;
+
+        Debug.Log(parentChoice.name);
+        Debug.Log(response);
+        parentChoice.OnChoose(response);
         DestroySiblings();
     }
 

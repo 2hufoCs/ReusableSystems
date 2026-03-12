@@ -8,7 +8,12 @@ public class Inventory : MonoBehaviour
 {
     [Header("Items")]
     public static Inventory Instance;
+
+    public static List<InventoryItem> currentItems = new();
+
     public static InventoryItem carriedItem;
+
+    [Header("References")]
     [SerializeField] InventorySlot[] inventorySlots;
     [SerializeField] Transform draggablesTransform;
     [SerializeField] InventoryItem itemPrefab;
@@ -17,16 +22,21 @@ public class Inventory : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinsTxt;
 
 
-    public Item[] items;
+    public Item[] itemPrefabs;
 
     [Header("Debug")]
     [SerializeField] Button giveItemButton;
     [SerializeField] Button giveCoinButton;
 
+    void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(Instance);
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
         giveItemButton.onClick.AddListener(delegate { SpawnInventoryItem(); });
         giveCoinButton.onClick.AddListener(delegate { AddCoins(1); });
     }
@@ -50,8 +60,8 @@ public class Inventory : MonoBehaviour
         // If no item given, just spawn a random one (debug, remove once it works)
         if (item == null)
         {
-            int random = Random.Range(0, items.Length);
-            item = items[random];
+            int random = Random.Range(0, itemPrefabs.Length);
+            item = itemPrefabs[random];
         }
 
         for (int i = 0; i < inventorySlots.Length; i++)
@@ -64,6 +74,17 @@ public class Inventory : MonoBehaviour
             break;
         }
     }
+
+    // public List<Item> GetAllItems()
+    // {
+    //     List<Item> items = new();
+    //     foreach (Item item in inventorySlots.transform.GetChild(0).GetComponent<Item>())
+    //     {
+            
+    //     }
+
+    //     return items;
+    // }
 
     public void SetCarriedItem(InventoryItem item)
     {
@@ -86,13 +107,12 @@ public class Inventory : MonoBehaviour
     public void AddCoins(int coins)
     {
         Coins += coins;
-        coinsTxt.text = "Coins: " + Coins.ToString();
-        Debug.Log(Coins);
+        coinsTxt.text = "Coins: " + coins;
     }
 
 
     public void EquipEquipment(SlotTag tag, InventoryItem item = null)
     {
-        // jsp ce que tu mets ici
+        
     }
 }

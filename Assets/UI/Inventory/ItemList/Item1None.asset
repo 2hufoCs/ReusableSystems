@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b58eb343f1d93b040bdcf8a90b579b12, type: 3}
-  m_Name: ItemChest
+  m_Name: Item1None
   m_EditorClassIdentifier: 
-  name: Yuyuko pfffpfpppf
-  description: ded
-  itemTag: 2
-  sprite: {fileID: 21300000, guid: 1ec116b103da9e24baebe43e21e6b534, type: 3}
+  name: Piano cat
+  description: mhh yes quite quite
+  itemTag: 0
+  sprite: {fileID: 21300000, guid: 53cd6312ebaefe74582890a042cac784, type: 3}
   equipmentPrefab: {fileID: 0}

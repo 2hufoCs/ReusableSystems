@@ -46,6 +46,47 @@
 ///////////////////////////////////////////////////     CONVERSATIONS     ////////////////////////////////////////////////////////////////////
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
+# SillyScene
+
+[] He just went to the bathroom. This is the perfect opportunity to act!! You won't get another chance like this anytime soon.
+[] Still, as you're about to put the pin under his pillow, you start second-guessing yourself. Is this really a good idea?
+[] I mean, it's fun, but you also don't wanna hurt him too bad.
+[] Ahhh... But skipping this opportunity would be such a waste...
+[] What to do? {choice pinChoice}
+
+# PutPinNoShield
+[] Nah, it's just a pin, surely he'll be fine. It's just a little prank!
+[] You quickly hide the pin under his pillow, pointing upwards.
+[] A few seconds later, you start hearing footsteps coming towards you. As Henry opens the door, you straighten your back, smiling forcefully.
+[HENRY Henry] Um... Hello again?
+[MIMI Mimi] Hi!!!
+[] He seems a little bit thrown off with your behaviour, but shrugs.
+[] He gets closer to his bed, laying down. And the moment he lays down his head...
+[HENRY Henry] OWWWW!!!
+[] He jumps back straight up!!
+[] And also shoots out his spikes everywhere around him. Which is, as one might guess, not good, considering you're right next to him.
+[] Among the many spikes that transpierce your body, the one going through your head is enough to kill you on the spot, not even having time to react.
+[] Everything falls dark, and you die.
+
+# PutPinWithShield
+[] Nah, it's just a pin, surely he'll be fine. It's just a little prank!
+[] You quickly hide the pin under his pillow, pointing upwards.
+[] A few seconds later, you start hearing footsteps coming towards you. As Henry opens the door, you straighten your back, smiling forcefully.
+[HENRY Henry] Um... Hello again?
+[MIMI Mimi] Hi!!!
+[] He seems a little bit thrown off with your behaviour, but shrugs.
+[] He gets closer to his bed, laying down. And the moment he lays down his head...
+[HENRY Henry] OWWWW!!!
+[] He jumps back straight up!!
+[] But you immediately put the shield in front of you. Flurries of spikes come flying all around, many hitting against your shield.
+[] Even the walls are made of hard stone, the spikes still indent in of them. Your metal shield holds on, though.
+[] Yahooo! You survived Henry's spikes!!
+
+# DontPutPin
+[HENRY Henry] meow meow meow meow meow meow meow meow meow meow meow meow meow meow
+[HENRY Henry] (meow)
+
+
 # MonsterWorldScene
 
 [] The slime girl chuckles awkwardly. Apparently, she didn’t really like the dragon make everyone shut up like that.

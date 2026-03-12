@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewChoice", menuName = "Choice")]
 public class Choice : ScriptableObject
@@ -10,6 +11,8 @@ public class Choice : ScriptableObject
     public string[] options = new string[3];
     [HideInInspector] public bool[] conditions = new bool[3]; // currently conditions can't be assigned in editor, only by code
     public string[] responses = new string[3];
+
+    public Action<string> OnChoose;
 
 
     public Choice(string name, string[] options, bool[] conditions, string[] responses)

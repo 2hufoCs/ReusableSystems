@@ -17,6 +17,8 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     {
         canvasGroup = GetComponent<CanvasGroup>();
         itemIcon = GetComponent<Image>();
+
+        Inventory.currentItems.Add(this);
     }
 
     public void Initialize(Item item, InventorySlot parent)
@@ -42,5 +44,10 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         {
             Inventory.Instance.SetCarriedItem(this);
         }
+    }
+
+    void OnDestroy()
+    {
+        Inventory.currentItems.Remove(this);
     }
 }

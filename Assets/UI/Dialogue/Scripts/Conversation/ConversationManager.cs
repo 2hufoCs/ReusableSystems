@@ -64,7 +64,7 @@ public class ConversationManager : MonoBehaviour
 			}
 		}
 
-		LoadConversation("MonsterWorldScene");
+		LoadConversation("SillyScene");
 	}
 
 	public void LoadConversation(string targetConversation)
@@ -174,10 +174,4 @@ public class ConversationManager : MonoBehaviour
 		gameObject.SetActive(false);
 		dialogueTriggered = false;
 	}
-}
-
-class Conversation
-{
-	string text;
-	Choice choice; // If there's a choice at the end of the conversation. can be assigned to null if none
 }

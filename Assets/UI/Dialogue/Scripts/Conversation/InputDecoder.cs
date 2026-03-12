@@ -165,20 +165,14 @@ public class InputDecoder : MonoBehaviour
 	IEnumerator PrintLine(string text)
 	{
 		writingLine = true;
-		float cps = 1 / textSpeed; // characters per second
+
+
+		//Debug.Log(cps);
 
 		string currentText = "";
 		for (int i = 0; i < text.Length; i++)
 		{
-			// If player clicks when line is writing, just show the rest
-			if (!writingLine)
-			{
-				// cps = 1 / skipSpeed; // just go super fast
-				currentText += text.Substring(i, text.Length - i);
-
-				dialogueText.text = currentText;
-				break;
-			}
+			float cps = 1 / (writingLine ? textSpeed : skipSpeed); // characters per second
 
 			if (text[i] == '{')
 			{
@@ -193,10 +187,8 @@ public class InputDecoder : MonoBehaviour
 			}
 
 			currentText += text[i];
-			if (writingLine)
-			{
-				dialogueText.text = currentText;
-			}
+			dialogueText.text = currentText;
+			
 			yield return new WaitForSeconds(cps);
 		}
 		dialogueText.text = currentText;
@@ -216,7 +208,7 @@ public class InputDecoder : MonoBehaviour
 		string command = text[(openingIndex + 1)..closingIndex];
 
 		// If command is a value, pause dialogue for that value
-		if (float.TryParse(command, out float value))
+		if (float.TryParse(command, out float value) && writingLine)
 		{
 			pausingLine = true;
 			pausingTime = value;

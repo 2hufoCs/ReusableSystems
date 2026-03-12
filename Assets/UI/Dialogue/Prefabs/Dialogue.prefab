@@ -298,20 +298,23 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -392,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPath: /Assets/UI/Dialogue/TextFiles/DialogueContent.txt
   dialogue: {fileID: 4900000, guid: 844a6cde2595a8941a04266fdc3d3c00, type: 3}
+  selectingChoice: 0
 --- !u!114 &1554088567222682504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +413,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1dffa608c550d634b85cc41215e15619, type: 2}
   - {fileID: 11400000, guid: f1fa12db4c57f4544ab7a13fdcb2a933, type: 2}
   textSpeed: 30
+  skipSpeed: 0
   choiceLogic: {fileID: 1313894280478809605}
   dialogueText: {fileID: 5811601635258036788}
   characterImage: {fileID: 4123931419433005382}
