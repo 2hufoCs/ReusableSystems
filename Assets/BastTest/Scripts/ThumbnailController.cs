@@ -32,9 +32,14 @@ public class ThumbnailController : MonoBehaviour
         }
 
         // Show other buttons (recursively)
-        foreach (ChoiceData choiceData in firstThumbnail.choicesData)
+        foreach (ChoiceData choiceData in data.choicesData)
         {
             GameObject instantiate = Instantiate(buttonPrefab, choicePanelTransform);
+
+            // Check if criterias are met (haas necessary items and no trap items)
+
+            // Otherwise add/remove corresponding items
+        
             instantiate.GetComponentInChildren<TextMeshProUGUI>().text = choiceData.choice;
             instantiate.GetComponent<Button>().onClick.AddListener( () => { DisplayThumbnail(choiceData.linkedThumbnail); });
         }

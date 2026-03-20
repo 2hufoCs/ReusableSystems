@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum Items {Key, SleepingPills, Extinguisher, NailedBat}
 
 public class Inventory : MonoBehaviour
 {
@@ -45,24 +46,38 @@ public class Inventory : MonoBehaviour
         carriedItem.transform.position = parentCanvas.transform.TransformPoint(movePos);
     }
 
-    public void SpawnInventoryItem(Item item = null)
+    public void SpawnInventoryItem(Items itemName)
     {
-        // If no item given, just spawn a random one (debug, remove once it works)
-        if (item == null)
-        {
-            int random = Random.Range(0, items.Length);
-            item = items[random];
-        }
+        Debug.Log(itemName.ToString());
+        Item itemToSpawn = GetItemByName(itemName.ToString());
 
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             // Skip until an empty slot is found
             if (inventorySlots[i].currentItem != null) continue;
             if (inventorySlots[i].currentTag != SlotTag.None) continue;
+
             InventoryItem newItem = Instantiate(itemPrefab, inventorySlots[i].transform);
-            newItem.Initialize(item, inventorySlots[i]);
+            newItem.Initialize(itemToSpawn, inventorySlots[i]);
             break;
         }
+    }
+
+    public void SpawnInventoryItem()
+    {
+        // Choose a random item
+        int random = UnityEngine.Random.Range(0, items.Length);
+        Items itemName = (Items)Enum.GetValues(typeof(Items)).GetValue(random);
+        SpawnInventoryItem(itemName);
+    }
+
+    Item GetItemByName(string name)
+    {
+        foreach (Item item in items)
+        {
+            if (item.name == name) return item;
+        }
+        return null;
     }
 
     public void SetCarriedItem(InventoryItem item)

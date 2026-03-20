@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: CabinetSearch
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: You look for something inside the cabinets, anything... Until you
+    find Vladros' sleeping pills! He DID mention he had insomnia, after all. You
+    might take advantage of this...
+  choicesData:
+  - choice: Add the pills in your pouch
+    linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
