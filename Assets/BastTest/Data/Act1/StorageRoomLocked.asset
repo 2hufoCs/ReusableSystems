@@ -17,5 +17,15 @@ MonoBehaviour:
   choicesData:
   - choice: Use key
     linkedThumbnail: {fileID: 11400000, guid: 2a58c5a8d35e3834184e90b91d0544f4, type: 2}
+    behaviours: 2
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0
   - choice: Walk back to the lounge
     linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0

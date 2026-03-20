@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         Instance = this;
-        giveItemButton.onClick.AddListener(delegate { SpawnInventoryItem(); });
+        giveItemButton.onClick.AddListener(delegate { SpawnItem(); });
         giveCoinButton.onClick.AddListener(delegate { AddCoins(1); });
     }
 
@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
         carriedItem.transform.position = parentCanvas.transform.TransformPoint(movePos);
     }
 
-    public void SpawnInventoryItem(Items itemName)
+    public void SpawnItem(Items itemName)
     {
         Debug.Log(itemName.ToString());
         Item itemToSpawn = GetItemByName(itemName.ToString());
@@ -63,12 +63,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void SpawnInventoryItem()
+    public void SpawnItem()
     {
         // Choose a random item
         int random = UnityEngine.Random.Range(0, items.Length);
         Items itemName = (Items)Enum.GetValues(typeof(Items)).GetValue(random);
-        SpawnInventoryItem(itemName);
+        SpawnItem(itemName);
+    }
+
+    public void RemoveItem(Items itemToRemove)
+    {
+        // Remove item
     }
 
     Item GetItemByName(string name)
@@ -108,6 +113,6 @@ public class Inventory : MonoBehaviour
 
     public void EquipEquipment(SlotTag tag, InventoryItem item = null)
     {
-        // jsp ce que tu mets ici
+        // Useful to do things when equipping stuff
     }
 }

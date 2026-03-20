@@ -38,7 +38,12 @@ public class ThumbnailController : MonoBehaviour
 
             // Check if criterias are met (haas necessary items and no trap items)
 
-            // Otherwise add/remove corresponding items
+            // Add item
+            if (choiceData.behaviours.HasFlag(ChoiceBehaviours.AddItem))
+            {
+                Debug.Log(choiceData.behaviours);
+                Inventory.Instance.SpawnItem(choiceData.itemToAdd);
+            }
         
             instantiate.GetComponentInChildren<TextMeshProUGUI>().text = choiceData.choice;
             instantiate.GetComponent<Button>().onClick.AddListener( () => { DisplayThumbnail(choiceData.linkedThumbnail); });

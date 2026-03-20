@@ -19,9 +19,29 @@ MonoBehaviour:
   choicesData:
   - choice: Open storage room door
     linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    behaviours: 0
+    itemToAdd: 1
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0
   - choice: Steal Vladros' keys
     linkedThumbnail: {fileID: 11400000, guid: 411859402b323de42954ed4dbd9b3252, type: 2}
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0
   - choice: Search the cabinets around
     linkedThumbnail: {fileID: 11400000, guid: 65330c77869334a4fa1fd5c403a24d74, type: 2}
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0
   - choice: Put sleeping pills in Vladros' coffee
     linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0

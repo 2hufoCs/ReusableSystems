@@ -19,3 +19,8 @@ MonoBehaviour:
   choicesData:
   - choice: Add the pills in your pouch
     linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
+    behaviours: 1
+    itemToAdd: 1
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0

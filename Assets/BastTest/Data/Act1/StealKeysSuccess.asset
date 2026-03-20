@@ -18,3 +18,8 @@ MonoBehaviour:
   choicesData:
   - choice: Open storage room door
     linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    behaviours: 1
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0

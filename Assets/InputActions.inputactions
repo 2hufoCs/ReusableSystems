@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "dd3da4f4-9e71-4d65-94ab-05938dc161fa",
+            "actions": [
+                {
+                    "name": "OnInventoryOpen",
+                    "type": "Button",
+                    "id": "0c1a3586-6f31-4c89-bb5c-98ff932e085d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "050cd1ba-a673-4b17-b9fb-65b44e5eb11a",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnInventoryOpen",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
