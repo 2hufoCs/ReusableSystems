@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: NailedBatPick
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: You pick up the nailed bat. Are they gonna be seriously hurt if you
+    swing at them with this? Nahhhh, surely it's fine.
+  choicesData:
+  - choice: Go back to fight Vladros
+    linkedThumbnail: {fileID: 11400000, guid: 68a70ac6c2549974abedff8f5ce13fef, type: 2}
+    triggerOnce: 0
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemToHave: 0
+    itemToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    alternateTexts:
+      keys: 
+      values: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

@@ -1,0 +1,166 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: Act1Start
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: Okay, you HAVE to check what's inside the storage room. Maybe there's
+    some stuff that'll allow you to start a revolution! For now, though, you're with
+    Vladros in the lounge. Some keys are attached to his belt. What do you do?
+  choicesData:
+  - choice: Try to open door
+    linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    triggerOnce: 0
+    behaviours: 4
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: 5378592573343662455
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: 5378592573343662456
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Steal Vladros' keys
+    linkedThumbnail: {fileID: 11400000, guid: 411859402b323de42954ed4dbd9b3252, type: 2}
+    triggerOnce: 1
+    behaviours: 24
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 1
+    hideOnDisabled: 0
+    winRate: 60
+    loseScene:
+      rid: 5378592573343662204
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Look for something in the cabinets
+    linkedThumbnail: {fileID: 11400000, guid: 65330c77869334a4fa1fd5c403a24d74, type: 2}
+    triggerOnce: 1
+    behaviours: 8
+    itemToAdd: 2
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 2
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Put pills inside Vladros' coffee
+    linkedThumbnail: {fileID: 11400000, guid: 363f75e0762e17442bd0d7d034634870, type: 2}
+    triggerOnce: 0
+    behaviours: 14
+    itemToAdd: 1
+    itemToRemove: 2
+    itemsToHave: 2
+    itemsToNotHave: 1
+    hideOnDisabled: 1
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5378592573343662204
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: Fail at stealing
+        linkedThumbnail: {fileID: 11400000, guid: a1b856c172b779647b72d66f5c625ca7, type: 2}
+        triggerOnce: 0
+        behaviours: 32
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: -5
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662455
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: 
+        linkedThumbnail: {fileID: 0}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662456
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: 
+        linkedThumbnail: {fileID: 0}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0

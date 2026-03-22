@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: VladrosSleep
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: As he glances down to read some book, you discreetely put the pills
+    in Vladros' coffee. He nonchalentely takes his cup, not looking up at his book,
+    drinks it... and fall asleep.
+  choicesData:
+  - choice: Take the keys while he's asleep!! It won't last for long.
+    linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    behaviours: 1
+    itemToAdd: 1
+    itemToRemove: 0
+    itemToHave: 1
+    itemToNotHave: 0
+    hideOnDisabled: 0

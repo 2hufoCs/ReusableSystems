@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: StorageRoomLocked
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: The door is locked. Maybe if you had some kind of key, it'd open?
+  choicesData:
+  - choice: Use key
+    linkedThumbnail: {fileID: 11400000, guid: 2a58c5a8d35e3834184e90b91d0544f4, type: 2}
+    triggerOnce: 0
+    behaviours: 6
+    itemToAdd: 0
+    itemToRemove: 1
+    itemsToHave: 1
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Walk back to the lounge
+    linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
+    triggerOnce: 0
+    behaviours: 0
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

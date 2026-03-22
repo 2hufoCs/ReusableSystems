@@ -1,0 +1,248 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: FightChoice
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: As you leave the room, Vladros is already standing in front of you,
+    ready to fight!! What do you do?
+  choicesData:
+  - choice: Fight him bare-handed!!
+    linkedThumbnail: {fileID: 11400000, guid: 5b9b2e8060501134da5fb5c2234962e9, type: 2}
+    triggerOnce: 1
+    behaviours: 96
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
+    hideOnDisabled: 1
+    winRate: 30
+    loseScene:
+      rid: 5378592573343662231
+    reputationPoints: 5
+    reputationThreshold: 0
+    badReputationScene:
+      rid: 5378592573343662441
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Splash him with the extinguisher
+    linkedThumbnail: {fileID: 11400000, guid: 5b9b2e8060501134da5fb5c2234962e9, type: 2}
+    triggerOnce: 1
+    behaviours: 68
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 4
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: 5378592573343662229
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Hit him with the bat
+    linkedThumbnail: {fileID: 11400000, guid: 5b9b2e8060501134da5fb5c2234962e9, type: 2}
+    triggerOnce: 1
+    behaviours: 100
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 8
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: -10
+    reputationThreshold: 0
+    badReputationScene:
+      rid: 5378592573343662230
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Convince him that there's no need to fight
+    linkedThumbnail: {fileID: 11400000, guid: ac30ce57b30175d45bf647c3ac0899b6, type: 2}
+    triggerOnce: 1
+    behaviours: 128
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList:
+      - Key: 4
+        Value:
+          choice: Has extinguisher
+          linkedThumbnail: {fileID: 11400000, guid: 5c157103d1c951a4589caac316a7ee23, type: 2}
+          triggerOnce: 0
+          behaviours: 32
+          itemToAdd: 0
+          itemToRemove: 0
+          itemsToHave: 0
+          itemsToNotHave: 0
+          hideOnDisabled: 0
+          winRate: 0
+          loseScene:
+            rid: -2
+          reputationPoints: 5
+          reputationThreshold: 0
+          badReputationScene:
+            rid: -2
+          alternateChoices:
+            _serializedList: []
+          triggered: 0
+      - Key: 8
+        Value:
+          choice: Has nailed bat
+          linkedThumbnail: {fileID: 11400000, guid: 2889a95c957a1ee46a5b1597a8d3c23d, type: 2}
+          triggerOnce: 0
+          behaviours: 0
+          itemToAdd: 0
+          itemToRemove: 0
+          itemsToHave: 0
+          itemsToNotHave: 0
+          hideOnDisabled: 0
+          winRate: 0
+          loseScene:
+            rid: -2
+          reputationPoints: 0
+          reputationThreshold: 0
+          badReputationScene:
+            rid: -2
+          alternateChoices:
+            _serializedList: []
+          triggered: 0
+    triggered: 0
+  - choice: Send pills down his throat with the bat
+    linkedThumbnail: {fileID: 11400000, guid: 4fc5c14dde852e841960cef69e853545, type: 2}
+    triggerOnce: 1
+    behaviours: 20
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 10
+    itemsToNotHave: 0
+    hideOnDisabled: 1
+    winRate: 40
+    loseScene:
+      rid: 5378592573343662231
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5378592573343662229
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: Vladros hates u
+        linkedThumbnail: {fileID: 11400000, guid: f902c3e3c2b136d48a037d9f0be5edae, type: 2}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662230
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: Vladros hates u
+        linkedThumbnail: {fileID: 11400000, guid: f902c3e3c2b136d48a037d9f0be5edae, type: 2}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662231
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: Miss your shot
+        linkedThumbnail: {fileID: 11400000, guid: 16341fc4262e1b24cab6de5586ad2fa3, type: 2}
+        triggerOnce: 0
+        behaviours: 32
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: -5
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662441
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: bet bonked
+        linkedThumbnail: {fileID: 11400000, guid: f902c3e3c2b136d48a037d9f0be5edae, type: 2}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0

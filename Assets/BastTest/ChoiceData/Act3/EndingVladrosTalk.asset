@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
-  m_Name: WeaponChoice
+  m_Name: EndingVladrosTalk
   m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
   thumbnailImage: {fileID: 0}
-  description: Test run ended, now go back to the beginning you stinky!!
-  choicesData:
-  - choice: Retry
-    linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
+  description: Seeing you have no weapon, he simply sighs, take back the key you
+    left in the keyhole, and close the door again. You smile innocently as he grumbles,
+    walking away. He was sooo scared you'd do something bad, poor thing!!!
+  choicesData: []
+  references:
+    version: 2
+    RefIds: []
