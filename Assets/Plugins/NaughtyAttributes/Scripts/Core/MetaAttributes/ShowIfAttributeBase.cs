@@ -35,5 +35,16 @@ namespace NaughtyAttributes
 
             EnumValue = enumValue;
         }
+
+        // public ShowIfAttributeBase(EConditionOperator conditionOperator, string enumName, Enum[] enumValue)
+        //     : this(enumName)
+        // {
+        //     if (enumValue == null)
+        //     {
+        //         throw new ArgumentNullException(nameof(enumValue), "This parameter must be an enum value.");
+        //     }
+
+        //     EnumValue = enumValue;
+        // }
     }
 }

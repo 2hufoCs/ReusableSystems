@@ -22,7 +22,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     public void Initialize(Item item, InventorySlot parent)
     {
         activeSlot = parent;
-        activeSlot.currentItem = this;
+        activeSlot.inventoryItem = this;
         currentItem = item;
         itemIcon.sprite = item.sprite;
 

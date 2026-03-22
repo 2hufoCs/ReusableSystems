@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
-    public InventoryItem currentItem;
+    public InventoryItem inventoryItem;
     public SlotTag currentTag;
 
     public void OnPointerClick(PointerEventData eventData)
@@ -21,21 +21,21 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     {
         // Reset slots
         Inventory.carriedItem = null;
-        item.activeSlot.currentItem = null;
+        item.activeSlot.inventoryItem = null;
 
         // Set current slot
-        currentItem = item;
-        currentItem.activeSlot = this;
-        currentItem.transform.SetParent(transform);
-        currentItem.transform.localPosition = Vector3.zero;
-        currentItem.canvasGroup.blocksRaycasts = true;
+        inventoryItem = item;
+        inventoryItem.activeSlot = this;
+        inventoryItem.transform.SetParent(transform);
+        inventoryItem.transform.localPosition = Vector3.zero;
+        inventoryItem.canvasGroup.blocksRaycasts = true;
 
         // Changing the sprite's size to fit in the slot
-        currentItem.FitImage();
+        inventoryItem.FitImage();
 
         if (currentTag != SlotTag.None)
         {
-            Inventory.Instance.EquipEquipment(currentTag, currentItem);
+            Inventory.Instance.EquipEquipment(currentTag, inventoryItem);
         }
     }
 }

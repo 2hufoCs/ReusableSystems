@@ -1,9 +1,16 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Items {Key, SleepingPills, Extinguisher, NailedBat}
+[Flags] public enum ItemsNames 
+{
+    Key = 1 << 0, 
+    SleepingPills = 1 << 1, 
+    Extinguisher = 1 << 2, 
+    NailedBat = 1 << 3
+}
 
 public class Inventory : MonoBehaviour
 {
@@ -24,10 +31,15 @@ public class Inventory : MonoBehaviour
     [SerializeField] Button giveItemButton;
     [SerializeField] Button giveCoinButton;
 
+    void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(Instance);
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
         giveItemButton.onClick.AddListener(delegate { SpawnItem(); });
         giveCoinButton.onClick.AddListener(delegate { AddCoins(1); });
     }
@@ -46,15 +58,14 @@ public class Inventory : MonoBehaviour
         carriedItem.transform.position = parentCanvas.transform.TransformPoint(movePos);
     }
 
-    public void SpawnItem(Items itemName)
+    public void SpawnItem(ItemsNames itemName)
     {
-        Debug.Log(itemName.ToString());
         Item itemToSpawn = GetItemByName(itemName.ToString());
 
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             // Skip until an empty slot is found
-            if (inventorySlots[i].currentItem != null) continue;
+            if (inventorySlots[i].inventoryItem != null) continue;
             if (inventorySlots[i].currentTag != SlotTag.None) continue;
 
             InventoryItem newItem = Instantiate(itemPrefab, inventorySlots[i].transform);
@@ -67,15 +78,19 @@ public class Inventory : MonoBehaviour
     {
         // Choose a random item
         int random = UnityEngine.Random.Range(0, items.Length);
-        Items itemName = (Items)Enum.GetValues(typeof(Items)).GetValue(random);
+        ItemsNames itemName = (ItemsNames)Enum.GetValues(typeof(ItemsNames)).GetValue(random);
         SpawnItem(itemName);
     }
 
-    public void RemoveItem(Items itemToRemove)
+    public void RemoveItem(ItemsNames itemName)
     {
         // Remove item
+        InventoryItem itemToRemove = FindHeldItem(itemName);
+        if (!itemToRemove) return;
+        Destroy(itemToRemove.activeSlot.transform.GetChild(0).gameObject);
     }
 
+    // Look for item in item list
     Item GetItemByName(string name)
     {
         foreach (Item item in items)
@@ -84,6 +99,46 @@ public class Inventory : MonoBehaviour
         }
         return null;
     }
+
+    List<InventoryItem> GetHeldItems()
+    {
+        List<InventoryItem> heldItems = new();
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            if (slot) heldItems.Add(slot.inventoryItem);
+        }
+        return heldItems;
+    }
+
+    // Look for item in InventorySlots (held items)
+    public InventoryItem FindHeldItem(ItemsNames itemName)
+    {
+        foreach (InventoryItem item in GetHeldItems())
+        {
+            if (item && item.currentItem.name == itemName.ToString()) return item;
+        }
+        //Debug.LogError($"wasn't able to find item named {itemName}!!");
+        return null;
+    }
+
+    public bool FindHeldItems(ItemsNames itemNames)
+    {
+        foreach (ItemsNames itemName in Enum.GetValues(typeof(ItemsNames)))
+        {
+            if (!itemNames.HasFlag(itemName)) continue;
+            if (!FindHeldItem(itemName)) return false;
+        }
+        return true;
+    }
+
+    // public bool HasHeldItems(ItemsNames[] itemNames)
+    // {
+    //     foreach (ItemsNames itemName in itemNames)
+    //     {
+    //         if (!FindHeldItem(itemName)) return false;
+    //     }
+    //     return true;
+    // }
 
     public void SetCarriedItem(InventoryItem item)
     {
@@ -107,7 +162,6 @@ public class Inventory : MonoBehaviour
     {
         Coins += coins;
         coinsTxt.text = "Coins: " + Coins.ToString();
-        Debug.Log(Coins);
     }
 
 

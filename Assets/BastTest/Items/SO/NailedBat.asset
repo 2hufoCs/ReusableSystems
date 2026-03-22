@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 3
   name: NailedBat
   description: Could be pretty bloody if you hit where it hurts.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 56952257b8b362243a78f46740fcb2cb, type: 3}
   basePrice: 0
   itemTag: 0
   equipmentPrefab: {fileID: 0}

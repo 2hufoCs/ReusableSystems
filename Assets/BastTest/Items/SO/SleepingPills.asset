@@ -16,7 +16,7 @@ MonoBehaviour:
   name: SleepingPills
   description: Pills that could make even an elephant fall asleep. Only works for
     a limited time though.
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1edce75ea87cf2e4b8fb1cc3bfceaafe, type: 3}
   basePrice: 0
   itemTag: 0
   equipmentPrefab: {fileID: 0}
