@@ -37,7 +37,7 @@ MonoBehaviour:
   - choice: Walk back to the lounge
     linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
     triggerOnce: 0
-    behaviours: 0
+    behaviours: 128
     itemToAdd: 0
     itemToRemove: 0
     itemsToHave: 0
@@ -51,7 +51,28 @@ MonoBehaviour:
     badReputationScene:
       rid: -2
     alternateChoices:
-      _serializedList: []
+      _serializedList:
+      - Key: 1
+        Value:
+          choice: Walk back to the lounge
+          linkedThumbnail: {fileID: 11400000, guid: 5bbc1490b9e566e439de22015b976c5b, type: 2}
+          triggerOnce: 0
+          behaviours: 0
+          itemToAdd: 0
+          itemToRemove: 0
+          itemsToHave: 0
+          itemsToNotHave: 0
+          hideOnDisabled: 0
+          winRate: 0
+          loseScene:
+            rid: -2
+          reputationPoints: 0
+          reputationThreshold: 0
+          badReputationScene:
+            rid: -2
+          alternateChoices:
+            _serializedList: []
+          triggered: 0
     triggered: 0
   references:
     version: 2

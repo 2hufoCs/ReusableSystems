@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41fa1806d908f943a09c843be3c7e59, type: 3}
+  m_Name: Act1VladrosSleep
+  m_EditorClassIdentifier: Assembly-CSharp::ThumbnailData
+  thumbnailImage: {fileID: 0}
+  description: You now have the keys. Open that door while you can!!
+  choicesData:
+  - choice: Try to open door
+    linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    triggerOnce: 0
+    behaviours: 4
+    itemToAdd: 0
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: 5378592573343662455
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: 5378592573343662456
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  - choice: Look for something in the cabinets
+    linkedThumbnail: {fileID: 11400000, guid: 65330c77869334a4fa1fd5c403a24d74, type: 2}
+    triggerOnce: 1
+    behaviours: 8
+    itemToAdd: 2
+    itemToRemove: 0
+    itemsToHave: 0
+    itemsToNotHave: 2
+    hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5378592573343662455
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: 
+        linkedThumbnail: {fileID: 0}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0
+    - rid: 5378592573343662456
+      type: {class: ChoiceData, ns: , asm: Assembly-CSharp}
+      data:
+        choice: 
+        linkedThumbnail: {fileID: 0}
+        triggerOnce: 0
+        behaviours: 0
+        itemToAdd: 0
+        itemToRemove: 0
+        itemsToHave: 0
+        itemsToNotHave: 0
+        hideOnDisabled: 0
+        winRate: 0
+        loseScene:
+          rid: -2
+        reputationPoints: 0
+        reputationThreshold: 0
+        badReputationScene:
+          rid: -2
+        alternateChoices:
+          _serializedList: []
+        triggered: 0

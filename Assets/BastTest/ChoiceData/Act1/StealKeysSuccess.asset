@@ -17,10 +17,26 @@ MonoBehaviour:
     put them in your pouch. Time to open that damned door!!!
   choicesData:
   - choice: Take keys, and go to storage room door
-    linkedThumbnail: {fileID: 11400000, guid: e6c6b5cd7561e6a418f10d10bb79a3a7, type: 2}
+    linkedThumbnail: {fileID: 11400000, guid: 5bbc1490b9e566e439de22015b976c5b, type: 2}
+    triggerOnce: 0
     behaviours: 1
     itemToAdd: 1
     itemToRemove: 0
-    itemToHave: 0
-    itemToNotHave: 0
+    itemsToHave: 0
+    itemsToNotHave: 0
     hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList: []
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

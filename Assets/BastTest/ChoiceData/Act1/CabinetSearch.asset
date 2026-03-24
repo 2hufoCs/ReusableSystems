@@ -19,9 +19,46 @@ MonoBehaviour:
   choicesData:
   - choice: Add the pills in your pouch
     linkedThumbnail: {fileID: 11400000, guid: 6fad4959eb0c8cd45b589bd13f4b42a7, type: 2}
-    behaviours: 1
+    triggerOnce: 0
+    behaviours: 129
     itemToAdd: 2
     itemToRemove: 0
-    itemToHave: 0
-    itemToNotHave: 1
+    itemsToHave: 0
+    itemsToNotHave: 0
     hideOnDisabled: 0
+    winRate: 0
+    loseScene:
+      rid: -2
+    reputationPoints: 0
+    reputationThreshold: 0
+    badReputationScene:
+      rid: -2
+    alternateChoices:
+      _serializedList:
+      - Key: 1
+        Value:
+          choice: Add the pills in your pouch
+          linkedThumbnail: {fileID: 11400000, guid: 5bbc1490b9e566e439de22015b976c5b, type: 2}
+          triggerOnce: 0
+          behaviours: 1
+          itemToAdd: 2
+          itemToRemove: 0
+          itemsToHave: 0
+          itemsToNotHave: 0
+          hideOnDisabled: 0
+          winRate: 0
+          loseScene:
+            rid: -2
+          reputationPoints: 0
+          reputationThreshold: 0
+          badReputationScene:
+            rid: -2
+          alternateChoices:
+            _serializedList: []
+          triggered: 0
+    triggered: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
